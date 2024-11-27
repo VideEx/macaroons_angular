@@ -1,0 +1,39 @@
+<header class="header">
+  <div class="container header__container">
+    <div class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="114" height="13" viewBox="0 0 114 13">
+        <text id="macaroons" class="cls-1" x="-0.812" y="12.809">macaroons</text>
+      </svg>
+    </div>
+
+    <div class="burger" id="burger">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        width="40px" height="22px">
+        <path fill-rule="evenodd"  fill="rgb(130, 19, 40)"
+              d="M0.000,22.000 L0.000,20.000 L40.000,20.000 L40.000,22.000 L0.000,22.000 ZM0.000,10.000 L40.000,10.000 L40.000,12.000 L0.000,12.000 L0.000,10.000 ZM0.000,-0.000 L40.000,-0.000 L40.000,2.000 L0.000,2.000 L0.000,-0.000 Z"/>
+      </svg>
+    </div>
+    <nav class="menu" id="menu">
+      <ul class="menu__items">
+<!--        Цикл для отображения ссылок-->
+<!--        <li class="menu__item" *ngFor="let link of menuLink">-->
+<!--          <a (click)="scrollTo(link.elementId)" class="menu__link">{{link.title}}</a>-->
+<!--        </li>-->
+        <li class="menu__item">
+          <a href="#macaroons" class="menu__link">Пироженки</a>
+        </li>
+        <li class="menu__item">
+          <a href="#about-us" class="menu__link">О нас</a>
+        </li>
+        <li class="menu__item">
+          <a href="#order" class="menu__link">Оформить заказ</a>
+        </li>
+      </ul>
+    </nav>
+    <div>
+      <a  class="contacts" [href]="getCall">+375 (29) 368-98-68</a>
+    </div>
+  </div>
+</header>

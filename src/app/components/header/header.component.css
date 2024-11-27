@@ -1,0 +1,150 @@
+.burger {
+  display: none;
+}
+
+.cls-1 {
+  font-size: 18px;
+  mix-blend-mode: luminosity;
+  fill: #fff;
+  font-family: Tavolga-Free, Tavolga, sans-serif;
+  text-transform: uppercase;
+}
+
+.header {
+  background-color: rgb(235, 168, 177);
+}
+
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 35px 0;
+}
+
+.menu {
+  width: 314px;
+}
+
+.menu__items {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.menu__link {
+  text-decoration: none;
+  font-size: 14px;
+  font-family: Gilroy, sans-serif;
+  font-weight: bold;
+  color: rgb(119, 11, 29);
+
+  cursor: pointer;
+}
+
+.contacts {
+  font-size: 16px;
+  font-family: Myriad Pro, sans-serif;
+  color: rgb(255, 255, 255);
+  width: 236px;
+  text-align: right;
+
+  text-decoration: none;
+}
+.open {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+
+@media screen and (max-width: 768px) {
+
+  .header__container {
+    justify-content: space-between;
+    /*gap: 104px;*/
+  }
+
+  .header .contacts {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 565px) {
+  .menu {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .header__container {
+    justify-content: space-between;
+  }
+
+
+  .menu {
+    display: none;
+
+    position: fixed;
+    width: 100%;
+    height: 100%;
+
+    max-width: 425px;
+    max-height: 100%;
+
+    z-index: 10000;
+
+    margin: 0;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  .burger {
+    display: block;
+    width: 40px;
+
+  }
+
+  .open {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .menu__items {
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menu__item {
+    padding-bottom: 20px;
+
+  }
+
+  .menu__link {
+    color: white;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .menu {
+    max-width: 375px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+
+  .menu {
+    max-width: 320px;
+  }
+}

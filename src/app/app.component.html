@@ -9,7 +9,7 @@
         Побалуйте себя и своих близких самыми вкусными и ароматными домашними пироженками Macaroon!
       </div>
       <div class="info__action">
-        <button class="btn info__action_button">
+        <button appButton class="btn info__action_button">
           Выбрать макарун
         </button>
       </div>
@@ -40,19 +40,9 @@
         <img src="assets/img/macaroon-big.png" alt="">
       </div>
       <div class="advantages__items">
-        <div class="advantage" *ngFor="let item of advantages; let i = index">
-          <div class="advantage__number">
-                        <span class="advantage__span">
-                            {{i+1}}
-                        </span>
-          </div>
-          <div class="advantage__title">
-            {{item.title}}
-          </div>
-          <div class="advantage__text">
-            {{item.desc}}
-          </div>
-        </div>
+        <app-advantage class="advantage" *ngFor="let advantage of advantages" [advantage]="advantage">
+
+        </app-advantage>
       </div>
     </div>
   </div>
@@ -64,28 +54,12 @@
       Выберите свой макарун
     </div>
     <div class="products__items">
-      <div class="product" *ngFor="let product of products">
-        <div class="product__img">
-          <img src="assets/img/{{product.img}}" alt="macaroons#1">
-        </div>
-        <div class="product__action">
-          <div class="product__text">
-            {{product.title}}
-          </div>
-          <div class="product__count">
-            1 шт.
-          </div>
-          <div class="product__price">
-            {{product.price}} руб.
-          </div>
-          <button class="btn product__button" (click)="getOrder(product, orderElement)">
-            Заказать
-          </button>
-        </div>
-      </div>
+      <app-product class="product" *ngFor="let product of products" [product]="product"  (addToOrderEvent)="getOrder($event)">
+      </app-product>
     </div>
   </div>
 </section>
+
 
 <section class="order" id="order" #orderElement>
   <div class="container order__container">
@@ -106,16 +80,17 @@
 
             Ваш выбор
           </div>
-          <input [(ngModel)]="formFields.productTitle" type="text" placeholder="Напишите, что хотите заказать..." class="order-form__input">
+          <input [(ngModel)]="formFields.productTitle" type="text" placeholder="Напишите, что хотите заказать..."
+                 class="order-form__input">
         </div>
 
         <div class="order-form__label">
           <div class="order-form__text">
             Заполните данные для заказа
           </div>
-          <input [(ngModel)]="formFields.name" type="text" placeholder="Ваше имя" class="order-form__input" >
+          <input [(ngModel)]="formFields.name" type="text" placeholder="Ваше имя" class="order-form__input">
           <input [(ngModel)]="formFields.phone" type="text" placeholder="+375 (__) ____-__-" class="order-form__input">
-          <input type="submit" value="Оформить заказ" class="btn order-form__submit">
+          <input type="submit" appButton value="Оформить заказ" class="btn order-form__submit">
         </div>
       </div>
     </div>
@@ -128,12 +103,15 @@
   </div>
 </section>
 
-<section class="present-ellipse" [style.display]="showPresent ? 'block' : 'none'">
+<section class="present-ellipse" [style.display]="showCart ? 'block' : 'none'">
   <div class="ellipse">
-    <img src="./assets/img/present.png" alt="">
+    <img src="./assets/img/cart.png" alt="">
   </div>
   <div class="present-msg">
-    Оформите заказ и получите подарок
-    <!--        <img class="present-msg__img" src="img/present-text.png" alt="">-->
+    {{this.price |currency: 'RUB': 'symbol-narrow'}}
+  </div>
+
+  <div class="present-count">
+    {{cartServise.cartCount}}
   </div>
 </section>

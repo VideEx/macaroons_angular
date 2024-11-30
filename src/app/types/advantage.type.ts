@@ -1,4 +1,5 @@
 export type AdvantageType = {
-  title: String;
+  id: number,
+  title: String,
   desc: String
 }

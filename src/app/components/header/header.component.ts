@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit {
 
   constructor() {
   }
-
+  phone: string = '375293689868';
   getCall: String = 'tel:+375(29)368-98-68';
 
   // Массив объектов для ссылок меню

@@ -1,0 +1,19 @@
+<div class="product">
+  <div class="product__img">
+    <img src="assets/img/{{product.img}}" alt="macaroons#1">
+  </div>
+  <div class="product__action">
+    <div class="product__text">
+      {{product.title}}
+    </div>
+    <div class="product__count">
+      1 шт.
+    </div>
+    <div class="product__price">
+      {{product.price}} руб.
+    </div>
+    <button class="btn product__button" appButton (click)="addProductToOrder()">
+      Заказать
+    </button>
+  </div>
+</div>

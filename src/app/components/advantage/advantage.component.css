@@ -1,0 +1,41 @@
+.advantage {
+  padding-top: 89px;
+  max-width: 220px;
+  /*padding-top: 89px;*/
+}
+
+.advantage__title {
+  font-size: 20px;
+  font-family: Gilroy-Bold, sans-serif;
+  color: rgb(51, 25, 7);
+  line-height: 24px;
+
+  padding: 10px 0;
+}
+
+.advantage__text {
+  font-size: 15px;
+  font-family: Gilroy, sans-serif;
+  color: rgb(51, 25, 7);
+  line-height: 1.333;
+
+}
+
+.advantage__number {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: rgb(130, 19, 40);
+  position: relative;
+
+
+}
+
+.advantage__span {
+  font-size: 60px;
+  font-family: Gilroy-Bold, sans-serif;
+  color: rgb(255, 255, 255);
+  position: absolute;
+  top: 14px;
+  left: 20px;
+}

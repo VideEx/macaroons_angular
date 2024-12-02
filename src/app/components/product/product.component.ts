@@ -11,8 +11,6 @@ import {CartService} from "../../servises/cart.service";
 export class ProductComponent {
 
   @Input()
-  public price: string = '';
-  @Input()
   get product(): ProductType {
     return this._product
   };
@@ -24,22 +22,8 @@ export class ProductComponent {
 
   @Output() addToOrderEvent: EventEmitter<ProductType> = new EventEmitter<ProductType>();
 
-  constructor(private productServise: ProductService,
-              public cartServise: CartService) {
-  }
-
   addProductToOrder() {
     this.addToOrderEvent.emit(this._product)
   }
-
-
-  // addProductToCard(product: ProductType) {
-  //   this.cartServise.cartCount++;
-  //   this.cartServise.cartPrice += product.price;
-  //
-  //   this.price = this.cartServise.cartPrice.toFixed(2).toString().replace('.', ',');
-  //   return this.price;
-  // }
-  //
 
 }

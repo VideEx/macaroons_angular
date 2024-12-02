@@ -4,7 +4,9 @@ import {ProductType} from "./types/product.type";
 import {ProductService} from "./servises/product.service";
 import {CartService} from "./servises/cart.service";
 import {ProductComponent} from "./components/product/product.component";
-
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+registerLocaleData(localeFr, 'ru');
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,7 +14,6 @@ import {ProductComponent} from "./components/product/product.component";
   providers: [ProductService]
 })
 export class AppComponent implements OnInit {
-  price: string = '0';
   products: ProductType[] = [];
   title: String = 'macaroon_angular';
 
@@ -77,15 +78,15 @@ export class AppComponent implements OnInit {
     this.products = this.productServise.getData();
   }
 
-  public getOrder(product: ProductType): string {
+  public getOrder(product: ProductType): void {
     this.cartServise.cartCount++;
     this.cartServise.cartPrice += product.price;
 
     // this.price = this.cartServise.cartPrice.toFixed(2).toString().replace('.', ',');
-    this.price = this.cartServise.cartPrice.toFixed(2);
+    // this.price = this.cartServise.cartPrice.toFixed(2);
 
     alert(product.title + ' добавлен в корзину!')
 
-    return this.price;
+    // return this.price;
   };
 }

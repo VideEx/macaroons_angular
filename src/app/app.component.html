@@ -103,12 +103,12 @@
   </div>
 </section>
 
-<section class="present-ellipse" [style.display]="showCart ? 'block' : 'none'">
+<section class="present-ellipse" [style.display]="cartServise.cartCount ? 'block':'none'">
   <div class="ellipse">
     <img src="./assets/img/cart.png" alt="">
   </div>
   <div class="present-msg">
-    {{this.price |currency: 'RUB': 'symbol-narrow'}}
+    {{cartServise.cartPrice |currency: 'RUB': 'руб': '1.2-2': 'ru'}}
   </div>
 
   <div class="present-count">
